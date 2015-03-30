@@ -1,0 +1,22 @@
+<script>
+
+
+(function() {
+  var answer = 'yes';
+
+  var guess = prompt('Are you a god?');
+
+    while (true) {
+      if (guess.toLowerCase() === answer) {
+        alert('Exactly. Ray got this wrong');
+        break;
+      } else if (guess.toLowerCase() !== answer) {
+        alert('If someone asks you, you say yes');
+        break;
+      }
+    }
+
+
+})();
+
+</script>
