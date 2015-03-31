@@ -1,22 +1,35 @@
 <script>
 
-
 (function() {
   var answer = 6;
 
   var guess = prompt('How many championships did Michael Jordan Win?');
 
-    while (true) {
-      if (guess === answer) {
-        alert('Exactly. He\'s the greatest');
-        break;
-      } else if (guess < answer) {
-        guess = Number.parseInt(prompt('To low. He is a lot better than that!'));
+      guess = Number.parseInt(guess);
+    while (guess !== answer)  {
+      if (guess < answer) {
+        guess = Number.parseInt(prompt('Too low. He is a lot better than that!'));
       } else if (guess > answer) {
         guess = Number.parseInt(prompt('Wow, slow down, he played baseball too!'));
       }
     }
+    function nextQuestion() {
+      var test = false;
+      var guesspoints = prompt('Exactly! He was amazing. But can you guess how many total points he scored while with the Bulls?');
+      var answerpoints = 29277;
+      guesspoints = Number.parseInt(guesspoints);
+        while (guesspoints !== answerpoints)  {
+        console.log('in while');
+        if (guesspoints < answerpoints) {
+           guesspoints = Number.parseInt(prompt('Are you crazy? He\'s the best player of all time! Guess higher.'));
+        } else if(guesspoints > answerpoints)  {
+          guesspoints = Number.parseInt(prompt('Whoa there...he\'s only human. Guess a lower answer.'));
+        }
+      }
+    }
 
+    nextQuestion();
+    alert('Congratulations! You now are a Michael Jordan expert.');
 
 })();
 
