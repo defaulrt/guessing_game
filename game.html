@@ -2,17 +2,18 @@
 
 
 (function() {
-  var answer = 'yes';
+  var answer = 6;
 
-  var guess = prompt('Are you a god?');
+  var guess = prompt('How many championships did Michael Jordan Win?');
 
     while (true) {
-      if (guess.toLowerCase() === answer) {
-        alert('Exactly. Ray got this wrong');
+      if (guess === answer) {
+        alert('Exactly. He\'s the greatest');
         break;
-      } else if (guess.toLowerCase() !== answer) {
-        alert('If someone asks you, you say yes');
-        break;
+      } else if (guess < answer) {
+        guess = Number.parseInt(prompt('To low. He is a lot better than that!'));
+      } else if (guess > answer) {
+        guess = Number.parseInt(prompt('Wow, slow down, he played baseball too!'));
       }
     }
 
