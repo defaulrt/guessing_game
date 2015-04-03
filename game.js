@@ -1,0 +1,64 @@
+(function() {
+  var el = document.getElementById('endGame');
+
+   var Game = function (answer, user, answeryears) {
+      this.userIdent = user;
+      this.answer = answer;
+      this.guess;
+      this.answeryears = answeryears;
+      this.notanotherName = function (guess) {
+        if (this.answeryears === guess) {
+          return true;
+        }
+        return false;
+
+      }
+      this.sayBye = function () {
+        el.textContent = 'Congratulations! ' + this.userIdent + ' You now are a Michael Jordan expert.';
+      }
+   };
+
+   var user = prompt('Welcome to the best game in the world. What\'s your name?');
+
+   var run1 = new Game(6, user, 13);
+   var run2 = new Game(13, user, 50);
+
+
+   console.log(run1.answeryears);
+   console.log(run2);
+
+
+
+
+
+  run1.guess = prompt('How many championships did Michael Jordan Win?');
+
+      run1.guess = Number.parseInt(run1.guess);
+    while (run1.guess !== run1.answer)  {
+      console.log(run1.guess + ', ' + run1.answer);
+      if (run1.guess < run1.answer) {
+        run1.guess = Number.parseInt(prompt('Too low. He is a lot better than that!'));
+      } else if (run1.guess > run1.answer) {
+        run1.guess = Number.parseInt(prompt('Wow, slow down, he played baseball too!'));
+      }
+    }
+    function nextQuestion() {
+      var guessyears = prompt('Exactly! He was amazing. But can you guess how many years he played for the Bulls??');
+      guessyears = Number.parseInt(guessyears);
+
+        while (run1.answeryears !== guessyears)  {
+
+        if (guessyears < run1.answeryears) {
+           guessyears = Number.parseInt(prompt('He played a lot longer than that!.'));
+        } else if(guessyears > run1.answeryears)  {
+          guessyears = Number.parseInt(prompt('Whoa there...he\'s only in his 50s.'));
+        }
+      }
+    }
+    nextQuestion();
+
+    run1.sayBye();
+
+})();
+
+
