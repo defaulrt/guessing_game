@@ -1,6 +1,6 @@
-<script>
-
 (function() {
+  var el = document.getElementById('endGame');
+
    var Game = function (answer, user, answeryears) {
       this.userIdent = user;
       this.answer = answer;
@@ -14,7 +14,7 @@
 
       }
       this.sayBye = function () {
-        alert('Congratulations! ' + this.userIdent + ' You now are a Michael Jordan expert.');
+        el.textContent = 'Congratulations! ' + this.userIdent + ' You now are a Michael Jordan expert.';
       }
    };
 
@@ -61,4 +61,4 @@
 
 })();
 
-</script>
+
